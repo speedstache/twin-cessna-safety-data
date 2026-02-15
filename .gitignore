@@ -1,0 +1,17 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Generated outputs
+analysis/outputs/
+data/master/*.csv
+
+# Logs
+*.log
