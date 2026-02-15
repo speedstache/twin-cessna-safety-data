@@ -116,6 +116,7 @@ Business
 Training
 Ferry
 Maintenance_Flight
+Commercial
 Unknown
 
 weather_category
@@ -186,6 +187,7 @@ Unstable_Approach
 Icing_Encounter
 Brake_System_Malfunction
 CFIT
+Landing_Gear_Collapse
 
 Machine-friendly format (use underscores).
 

@@ -113,14 +113,6 @@ Non-standardized or insufficient training in systems or emergency procedures.
 
 ---
 
-### Observation – Environmental / Wildlife Events
-
-During coding of C310-ACC-2006-001 (CHI06LA060), no existing contributing factor category adequately captured wildlife strike–initiated accidents resulting in secondary system failures.
-
-No taxonomy change made at this time. Monitor for recurrence threshold (≥3 similar events).
-
----
-
 #### Unknown
 
 unknown  
@@ -144,3 +136,20 @@ Used only when evidence does not allow reasonable attribution to other categorie
 - Aging_aircraft_degradation may require refinement if recurring subsystem patterns emerge.
 - High_time_complacency requires careful application to
 
+### Observation – Environmental / Wildlife Events
+
+During coding of C310-ACC-2006-001 (CHI06LA060), no existing contributing factor category adequately captured wildlife strike–initiated accidents resulting in secondary system failures.
+
+No taxonomy change made at this time. Monitor for recurrence threshold (≥3 similar events).
+
+---
+
+### Observation – Airspeed Management Cases
+
+Takeoff stall case (C310-ACC-2006-004) revealed that current taxonomy does not explicitly include an airspeed management or pitch control factor. For now, coded under assumption_of_performance. Monitor recurrence before adding new factor.
+
+---
+
+### Version 1.1 – Added "Commercial" as allowed value for mission_profile.
+
+Rationale: Distinguish Part 135 and revenue operations from owner-flown Part 91 flights to enable comparative analysis of operational context.

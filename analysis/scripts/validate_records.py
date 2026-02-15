@@ -52,6 +52,7 @@ ALLOWED_MISSION = {
     "Training",
     "Ferry",
     "Maintenance_Flight",
+    "Commercial",
     "Unknown",
 }
 ALLOWED_WEATHER = {"VMC", "IMC", "Night", "Icing", "High_DA", "Mixed", "Unknown"}
