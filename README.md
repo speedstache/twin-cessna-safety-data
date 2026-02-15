@@ -33,11 +33,11 @@ All models are analyzed separately unless explicitly performing cross-type compa
 Operations included:
 
 - Part 91
+- Part 135
 - Owner-flown emphasis
 - Personal and business use
 
 Operations excluded unless explicitly labeled:
-- Scheduled Part 135 commuter assumptions
 - Military operations
 - Non-piston turbine conversions (unless separately analyzed)
 
