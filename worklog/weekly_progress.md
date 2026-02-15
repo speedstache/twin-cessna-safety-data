@@ -145,3 +145,84 @@ Governance stable.
 Analytical posture disciplined.
 
 Ready to transition from architecture to data acquisition.
+
+---
+
+## Week 1 – First CAROL Export Completed
+Date: 2026-02-15
+
+### Status: Dataset Boundary Established (C310 Accidents)
+
+This week marked the transition from infrastructure build to live data acquisition.
+
+A controlled CAROL query was executed for:
+
+- Aircraft: Cessna 310
+- Event Type: Accident
+- Date Range: 01/01/2006 – Present
+- Dataset: Aviation Accident & Incident Data
+
+The export was archived locally in:
+
+06_Archived_Queries/CAROL_Exports/CAROL_ACC_C310_2006-Present_2026-02-15.csv
+
+---
+
+## CAROL Export Summary
+
+- Rows returned: 165
+- Event years observed: 2006–2025
+- Unparsed date count: 0
+- Part 135-like rows (heuristic): 9 (5.5%)
+- Out-of-scope model count: 0
+- Turbine contamination: None observed
+
+Model distribution (normalized):
+
+- C310: 165 (100%)
+- C320: 0
+- C340: 0
+- C402: 0
+- C414: 0
+- C421: 0
+
+Full markdown report generated at:
+analysis/outputs/carol_export_summary.md
+
+---
+
+## Observations
+
+1. Model filter performed correctly — no turbine drift detected.
+2. Date filter behaved as expected (2006–2025).
+3. Part 135 contamination is present but limited (~5%).
+4. Dataset size (165 events) is manageable for phased coding.
+
+The dataset boundary for C310 accidents (2006–Present) is now defined and reproducible.
+
+---
+
+## Risks Identified
+
+- Potential overrepresentation of fatal accidents if selection is not diversified.
+- Possible misclassification of Part 135 vs Part 91 in early coding.
+- Phase-of-flight categorization may require report-level review (not reliably present in export fields).
+
+---
+
+## Next Steps (Phase 1 Coding Initiation)
+
+1. Select first 25 accidents using diversity-based selection criteria.
+2. Complete evidence intake (PDF downloads) before structured coding.
+3. Begin structured record creation in batches of five.
+4. Reassess taxonomy stress after first 5 coded events.
+
+---
+
+## Overall Assessment
+
+Infrastructure is fully operational.
+
+First live dataset successfully acquired and summarized.
+
+Project has transitioned from system-building to evidence-driven analysis.

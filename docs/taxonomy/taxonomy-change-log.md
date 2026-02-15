@@ -60,6 +60,9 @@ Failure to follow written checklist procedures when required.
 task_saturation  
 Cognitive overload resulting in degraded decision quality.
 
+low_light_conditions
+Poor visibility during dusk or sunrise leading to impact or pilot error
+
 ---
 
 #### Maintenance / Mechanical
@@ -110,6 +113,14 @@ Non-standardized or insufficient training in systems or emergency procedures.
 
 ---
 
+### Observation – Environmental / Wildlife Events
+
+During coding of C310-ACC-2006-001 (CHI06LA060), no existing contributing factor category adequately captured wildlife strike–initiated accidents resulting in secondary system failures.
+
+No taxonomy change made at this time. Monitor for recurrence threshold (≥3 similar events).
+
+---
+
 #### Unknown
 
 unknown  
@@ -132,3 +143,4 @@ Used only when evidence does not allow reasonable attribution to other categorie
 - Human factors may overlap conceptually (e.g., task_saturation vs plan_continuation_bias).
 - Aging_aircraft_degradation may require refinement if recurring subsystem patterns emerge.
 - High_time_complacency requires careful application to
+

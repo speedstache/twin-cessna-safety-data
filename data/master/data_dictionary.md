@@ -20,8 +20,8 @@ Master CSV files are generated from those records via script.
 
 event_id
 Type: string
-Format: [Model]-[Source]-[Year]-[State]-[Sequential ID]
-Example: C310-ACC-2012-FL-001
+Format: [Model]-[Source]-[Year]-[Sequential ID]
+Example: C310-ACC-2012-001
 Purpose: Unique identifier for each aircraft occurrence.
 
 model
@@ -185,6 +185,7 @@ Rejected_Takeoff
 Unstable_Approach
 Icing_Encounter
 Brake_System_Malfunction
+CFIT
 
 Machine-friendly format (use underscores).
 

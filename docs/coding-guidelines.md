@@ -45,9 +45,9 @@ Location:
 - `data/structured/asrs/<model>/`
 
 Naming:
-- `C310-ACC-2012-FL-001.md`
-- `C414-INC-2017-AZ-004.md`
-- `C402-ASRS-2020-UNK-005.md`
+- `C310-ACC-2012-001.md`
+- `C414-INC-2017-004.md`
+- `C402-ASRS-2020-005.md`
 
 ---
 

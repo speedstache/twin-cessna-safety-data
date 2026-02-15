@@ -15,3 +15,13 @@ data/master/*.csv
 
 # Logs
 *.log
+
+# Raw data archives
+06_Archived_Queries/
+
+# Jupyter notebooks (if ever used)
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
