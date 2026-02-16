@@ -1,17 +1,28 @@
 # Virtual environment
 .venv/
 venv/
+env/
 
 # Python cache
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+*.log
 
 # macOS
 .DS_Store
 
-# Generated outputs
+# Generated Outputs
+out/
+analysis/out/
 analysis/outputs/
 data/master/*.csv
+
+# Generated CSV tables (not master dataset)
+unknown_tables/
+governance_tables/
+dataset_snapshot_tables/
 
 # Logs
 *.log
@@ -25,3 +36,7 @@ data/master/*.csv
 # IDE
 .vscode/
 .idea/
+
+# NTSB PDFs (should NOT be in Git)
+01_NTSB/
+*.pdf
