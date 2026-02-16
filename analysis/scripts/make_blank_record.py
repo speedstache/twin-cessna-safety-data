@@ -151,7 +151,7 @@ def parse_args() -> Args:
     ap.add_argument("--source", default="NTSB", help="Data source. Default: NTSB")
     ap.add_argument("--state", default="Unknown", help="Data source. Default: Unknown")
     ap.add_argument("--country", default="USA", help="Country. Default: USA")
-    ap.add_argument("--taxonomy-version", default="1.1", help="Taxonomy version string. Default: 1.1")
+    ap.add_argument("--taxonomy-version", default="1.2", help="Taxonomy version string. Default: 1.2")
 
     ap.add_argument(
         "--out-root",

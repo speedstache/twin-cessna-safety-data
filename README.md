@@ -138,13 +138,13 @@ No structured record is considered complete without an evidence pointer.
 
 Format:
 
-[Model]-[Source]-[Year]-[State]-[Sequential ID]
+[Model]-[Source]-[Year]-[Sequential ID]
 
 Examples:
 
-C310-ACC-2012-FL-001  
-C340-ACC-2018-TX-004  
-C421-ASRS-2020-CA-012  
+C310-ACC-2012-001  
+C340-ACC-2018-004  
+C421-ASRS-2020-012  
 
 Model codes used in event IDs:
 

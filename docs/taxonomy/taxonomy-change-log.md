@@ -153,3 +153,13 @@ Takeoff stall case (C310-ACC-2006-004) revealed that current taxonomy does not e
 ### Version 1.1 – Added "Commercial" as allowed value for mission_profile.
 
 Rationale: Distinguish Part 135 and revenue operations from owner-flown Part 91 flights to enable comparative analysis of operational context.
+
+ ---
+
+ ### Version 1.2 – Added Operation_Type and Density_Altitude_Category as required fields.
+
+Rationale: Formally Distinguish Part 135 and revenue operations from owner-flown Part 91 flights to enable comparative analysis of operational context. Add context for Density Altitude for additional analysis. 
+
+Updated all structured accident files to new taxonomy, validator and build files to match. 
+
+ ---

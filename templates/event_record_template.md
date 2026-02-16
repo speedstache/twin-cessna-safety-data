@@ -3,6 +3,7 @@ event_id:
 aircraft_model: Cessna 310 (variant)
 engine_type: 
 year: 
+operation_type: (91 / 135)
 state: 
 country: USA
 source: (NTSB / ASRS / FAA / Other)
@@ -30,11 +31,14 @@ taxonomy_version: 1.0
 ## Mission Profile
 (Personal / Business / Training / Maintenance flight / Ferry / Unknown)
 
-## Weather / Density Altitude
+## Weather 
 (VMC / IMC / Night / Icing / High DA / Unknown)
 
+## Density_Altitude_Category
+(Low / Moderate / High / Extreme / Unknown)
+
 ## Maintenance State
-(Recent work / Deferred discrepancies / Unknown / No notable maintenance context)
+(Recent work / Deferred discrepancies / Unknown / None_Noted)
 
 ---
 
