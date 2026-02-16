@@ -33,6 +33,7 @@ RE_FRONT_MATTER = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.DOTALL)
 # ---- Scope (fleet-wide) ----
 ALLOWED_MODELS = {"C310", "C320", "C340", "C402", "C414", "C421"}
 ALLOWED_SOURCES = {"NTSB", "ASRS", "FAA", "Other"}
+ALLOWED_OPERATION = {91, 135}
 
 # ---- Allowed categorical values (must match data_dictionary.md) ----
 ALLOWED_PHASE = {
@@ -56,6 +57,7 @@ ALLOWED_MISSION = {
     "Unknown",
 }
 ALLOWED_WEATHER = {"VMC", "IMC", "Night", "Icing", "High_DA", "Mixed", "Unknown"}
+ALLOWED_DENSITY_ALT = {"Low", "Moderate", "High", "Extreme", "Unknown"}
 ALLOWED_MAINT_CONTEXT = {"Recent_Work", "Deferred", "None_Noted", "Unknown"}
 ALLOWED_RECENCY = {"Current", "Lapsed", "Unknown"}
 
@@ -98,6 +100,7 @@ REQUIRED_FIELDS = [
     "event_id",
     "model",
     "year",
+    "operation_type",
     "state",
     "country",
     "source",
@@ -108,6 +111,7 @@ REQUIRED_FIELDS = [
     "phase_of_flight",
     "mission_profile",
     "weather_category",
+    "density_altitude_category",
     "maintenance_context",
     "total_time_band",
     "multi_time_band",
@@ -200,7 +204,9 @@ def validate_enums(path: Path, d: Dict[str, Any], issues: List[ValidationIssue])
 
     check("phase_of_flight", ALLOWED_PHASE)
     check("mission_profile", ALLOWED_MISSION)
+    check("operation_type", ALLOWED_OPERATION)
     check("weather_category", ALLOWED_WEATHER)
+    check("density_altitude_category", ALLOWED_DENSITY_ALT)
     check("maintenance_context", ALLOWED_MAINT_CONTEXT)
     check("recency_status", ALLOWED_RECENCY)
     check("total_time_band", ALLOWED_TOTAL_BAND)

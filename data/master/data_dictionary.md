@@ -50,6 +50,12 @@ Type: integer
 Range: 1950–present
 Purpose: Year of occurrence.
 
+operation_type
+Type: categorical string
+Allowed values:
+91
+135
+
 state
 Type: string (2-letter code)
 Example: FL, TX, CA
@@ -128,6 +134,15 @@ Night
 Icing
 High_DA
 Mixed
+Unknown
+
+density_altitude_category
+Type: categorical string
+Allowed values:
+Low
+Moderate
+High
+Extreme
 Unknown
 
 maintenance_context

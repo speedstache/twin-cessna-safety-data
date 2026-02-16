@@ -70,6 +70,7 @@ BASE_COLUMNS = [
     "variant",
     "engine_type",
     "year",
+    "operation_type",
     "state",
     "country",
     "source",
@@ -81,6 +82,7 @@ BASE_COLUMNS = [
     "phase_of_flight",
     "mission_profile",
     "weather_category",
+    "density_altitude_category",
     "maintenance_context",
     # Experience
     "total_time_band",

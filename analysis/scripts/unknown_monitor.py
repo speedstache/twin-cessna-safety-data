@@ -345,6 +345,26 @@ def main() -> int:
 
     pause_required = isinstance(overall["unknown_factor_rate"], (int, float)) and overall["unknown_factor_rate"] > args.threshold
 
+    # ----------------- Context Unknown Monitoring -----------------
+
+    def compute_context_unknown_rate(column_name: str) -> Optional[Dict[str, Any]]:
+        col = _pick_col_exact_case_insensitive(df, column_name)
+        if not col:
+            return None
+
+        series = df[col].fillna("Unknown").astype(str).str.strip()
+        total = len(series)
+        unknown_count = int((series == "Unknown").sum())
+
+        return {
+            "records_total": total,
+            "unknown_records": unknown_count,
+            "unknown_rate": round(unknown_count / total, 4) if total > 0 else "Unknown",
+        }
+
+    density_alt_unknown = compute_context_unknown_rate("density_altitude_category")
+
+
     # Group tables
     group_tables: Dict[str, pd.DataFrame] = {}
     for name, col in group_candidates.items():
@@ -373,6 +393,16 @@ def main() -> int:
     print(f"- **unknown_factor_rate**: {overall['unknown_factor_rate']}")
     print(f"- **threshold**: {args.threshold}")
     print(f"- **pause_required**: {pause_required}")
+
+        # ----------------- Density Altitude Unknown -----------------
+
+    if density_alt_unknown:
+        print()
+        print("## Density Altitude Category Unknown Usage")
+        print(f"- **records_total**: {density_alt_unknown['records_total']}")
+        print(f"- **unknown_records**: {density_alt_unknown['unknown_records']}")
+        print(f"- **unknown_rate**: {density_alt_unknown['unknown_rate']}")
+
 
     if pause_required:
         print()
