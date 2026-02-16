@@ -12,7 +12,7 @@ scripts/
 
 ### Reactivate Virtual Environment
 
-Reactivate Virtual Environment
+source venv/bin/activate
 
 # you should see: 
 
