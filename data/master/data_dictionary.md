@@ -228,15 +228,6 @@ Go_Around
 Unstabilized_Approach
 Rejected_Takeoff
 Forced_Landing
-Taxi
-Takeoff
-Landing
-Approach
-Cruise
-Climb
-Descent
-Icing
-Night
 Gear_Collapse
 Gear_Up_Landing
 Gear_Separation

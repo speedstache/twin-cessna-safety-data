@@ -285,3 +285,7 @@ CFIT
 - Cleaner frequency aggregation
 - Improved co-occurrence analysis with contributing factors
 - More stable cross-model comparison once dataset maturity gates are met
+
+### Observation – Toxicology report
+
+Takeoff stall case (C340-ACC-2006-004) revealed that current taxonomy does not explicitly include an entry for contributing factors related to toxicology reports present for drugs or alcohol. 
