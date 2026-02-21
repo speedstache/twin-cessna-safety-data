@@ -51,3 +51,6 @@ python analysis/scripts/validate_records.py --path data/structured/accidents --w
 
 # run build_master.py
 python analysis/scripts/build_master.py
+
+# run demo_report.sh
+bash analysis/scripts/demo_report.sh
