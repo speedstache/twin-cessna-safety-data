@@ -94,9 +94,10 @@ Purpose: Audit trail for evidence acquisition.
 
 taxonomy_version
 Type: string
-Example: 1.0
-Purpose: Indicates contributing-factor schema version used.
-
+Example: 1.3
+Purpose: Indicates the record schema/taxonomy version used for this dataset row,
+including required fields and controlled vocabularies (e.g., event_type list and
+contributing factor taxonomy).
 ---
 
 # SECTION 2 — CONTEXT FIELDS
@@ -190,19 +191,71 @@ Unknown
 
 # SECTION 4 — OUTCOME FIELDS
 
+Note (v1.3):
+event_type was split into a controlled primary event_type and an optional event_subtype to reduce label drift.
+Legacy compound values (e.g., "Loss_of_Control_Go_Around") must be migrated to:
+event_type=Loss_of_Control, event_subtype=Go_Around.
+
 event_type
-Type: categorical string
-Examples:
+Type: categorical string (controlled)
+Allowed values:
 Loss_of_Control
-Engine_Failure
-Runway_Excursion
-Fuel_Exhaustion
-Rejected_Takeoff
-Unstable_Approach
-Icing_Encounter
-Brake_System_Malfunction
 CFIT
-Landing_Gear_Collapse
+Fuel_Starvation
+Fuel_Exhaustion
+Fire
+Engine_Failure
+Landing_Gear_Malfunction
+Runway_Excursion
+Hard_Landing
+Midair_Collision
+Ground_Collision
+System_Malfunction
+Other
+
+Purpose:
+Primary outcome class. Use the smallest stable vocabulary so counts do not fragment.
+
+Rules:
+- event_type must be one of the allowed values above.
+- Do NOT encode phase of flight, weather, or mechanical trigger in event_type.
+- Use machine-friendly underscores exactly as shown.
+
+event_subtype
+Type: categorical string (controlled, optional)
+Allowed values:
+Go_Around
+Unstabilized_Approach
+Rejected_Takeoff
+Forced_Landing
+Taxi
+Takeoff
+Landing
+Approach
+Cruise
+Climb
+Descent
+Icing
+Night
+Gear_Collapse
+Gear_Up_Landing
+Gear_Separation
+Gear_Failure
+Brake_Failure
+Engine_Loss_Power
+Engine_Fire
+Bird_Strike
+Unknown
+
+Purpose:
+Single modifier describing operational context or initiating trigger for the primary event_type.
+
+Rules:
+- event_subtype may be blank if no single modifier is clearly supported by the report.
+- Only ONE value may be used (no lists, no compound strings).
+- event_subtype must be one of the allowed values above; new values require schema change protocol.
+- Do NOT duplicate event_type (e.g., don’t use Runway_Excursion as a subtype).
+
 
 Machine-friendly format (use underscores).
 

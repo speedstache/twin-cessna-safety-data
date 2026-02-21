@@ -91,6 +91,7 @@ BASE_COLUMNS = [
     "recency_status",
     # Outcome
     "event_type",
+    "event_subtype",
     "fatal",
     "serious_injury",
     "aircraft_destroyed",

@@ -163,3 +163,125 @@ Rationale: Formally Distinguish Part 135 and revenue operations from owner-flown
 Updated all structured accident files to new taxonomy, validator and build files to match. 
 
  ---
+
+### Version 1.3
+
+Date: 2026-02-20
+Scope: Schema refinement – Event classification structure
+Applies To: All structured accident records
+
+## Change Summary
+
+- Split event_type into two controlled fields:
+- event_type (primary outcome class – controlled vocabulary)
+- event_subtype (single initiating trigger modifier – controlled vocabulary, optional)
+- This change eliminates compound event labels (e.g., Loss_of_Control_Go_Around) and prevents fragmentation of primary event counts.
+
+## Rationale
+
+Under v1.2, event_type was functioning as both:
+
+- A primary safety outcome classification
+- A contextual/initiating modifier
+- This resulted in compound strings encoding multiple dimensions (phase, trigger, outcome), which creates:
+
+- Frequency fragmentation
+- Reduced analytical clarity
+- Increased risk of uncontrolled vocabulary drift
+- Difficulty aggregating across models and years
+- Splitting the field preserves:
+- Stable primary outcome categories
+- Analytical clarity
+- Controlled dimensional separation
+- Future scalability beyond 75+ records
+
+## Structural Changes
+1. event_type
+
+Now restricted to controlled primary outcome list:
+
+Loss_of_Control
+CFIT
+Fuel_Starvation
+Fuel_Exhaustion
+Fire
+Engine_Failure
+Landing_Gear_Malfunction
+Runway_Excursion
+Hard_Landing
+Midair_Collision
+Ground_Collision
+System_Malfunction
+Other
+
+## Compound labels are no longer permitted.
+
+2. New Field: event_subtype
+
+Optional controlled modifier field.
+
+Purpose:
+Captures the single initiating trigger or procedural modifier most directly associated with the primary event.
+
+Allowed values:
+
+Go_Around
+Unstabilized_Approach
+Rejected_Takeoff
+Forced_Landing
+Gear_Collapse
+Gear_Up_Landing
+Gear_Separation
+Gear_Failure
+Brake_Failure
+Engine_Loss_Power
+Engine_Fire
+Bird_Strike
+Unknown
+
+## Rules:
+
+- Only one subtype permitted.
+- Must not duplicate event_type.
+- Must not encode phase_of_flight.
+- Must not encode weather_category.
+- Blank allowed if no single trigger clearly supported.
+- Expansion requires schema change protocol.
+
+## Migration Rules (v1.2 → v1.3)
+
+All legacy compound event_type values must be migrated:
+
+Example:
+
+Loss_of_Control_Go_Around
+→ event_type: Loss_of_Control
+→ event_subtype: Go_Around
+
+Fuel_Starvation_Forced_Landing
+→ event_type: Fuel_Starvation
+→ event_subtype: Forced_Landing
+
+Gear_Failure_Runway_Excursion
+→ event_type: Landing_Gear_Malfunction
+→ event_subtype: Gear_Failure
+
+CFIT
+→ event_type: CFIT
+→ event_subtype: blank
+
+# All records must:
+
+- Update taxonomy_version to 1.3
+- Pass updated validator
+- Rebuild master dataset
+
+# Backward Compatibility
+
+- v1.2 structured files are not compliant with v1.3 until migrated.
+- Master dataset must not mix taxonomy versions.
+- Expected Analytical Impact
+- Reduced event label fragmentation
+- Cleaner frequency aggregation
+- Improved co-occurrence analysis with contributing factors
+- More stable cross-model comparison once dataset maturity gates are met

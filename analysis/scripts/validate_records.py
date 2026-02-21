@@ -67,7 +67,40 @@ ALLOWED_TYPE_BAND = {"<50", "50-200", "200-1000", ">1000", "Unknown"}
 
 ALLOWED_PREVENTION_CATEGORY = {"Training", "Maintenance", "SOP", "Equipment", "Awareness", "Unknown"}
 
-# ---- Taxonomy v1.0 factor keys (YAML list entries) ----
+# ---- v1.3 Event Classification ----
+ALLOWED_EVENT_TYPE_V13 = {
+    "Loss_of_Control",
+    "CFIT",
+    "Fuel_Starvation",
+    "Fuel_Exhaustion",
+    "Fire",
+    "Engine_Failure",
+    "Landing_Gear_Malfunction",
+    "Runway_Excursion",
+    "Hard_Landing",
+    "Midair_Collision",
+    "Ground_Collision",
+    "System_Malfunction",
+    "Other",
+}
+
+ALLOWED_EVENT_SUBTYPE_V13 = {
+    "Go_Around",
+    "Unstabilized_Approach",
+    "Rejected_Takeoff",
+    "Forced_Landing",
+    "Gear_Collapse",
+    "Gear_Up_Landing",
+    "Gear_Separation",
+    "Gear_Failure",
+    "Brake_Failure",
+    "Engine_Loss_Power",
+    "Engine_Fire",
+    "Bird_Strike",
+    "Unknown",
+}
+
+# ---- Taxonomy v1.3 factor keys (YAML list entries) ----
 FACTOR_KEYS = [
     # Human / Cognitive
     "normalization_of_deviance",
@@ -118,6 +151,7 @@ REQUIRED_FIELDS = [
     "time_in_type_band",
     "recency_status",
     "event_type",
+    "event_subtype",
     "contributing_factors",
     "prevention_category",
     "prevention_summary",
@@ -161,9 +195,14 @@ def filename_stem(path: Path) -> str:
 
 def validate_required_fields(path: Path, d: Dict[str, Any], issues: List[ValidationIssue]) -> None:
     for f in REQUIRED_FIELDS:
+        # v1.3 rule: event_subtype key is required, but blank is allowed
+        if f == "event_subtype":
+            if f not in d:
+                issues.append(ValidationIssue(path, "ERROR", f"Missing required field: {f}"))
+            continue
+
         if f not in d or d[f] in (None, "", []):
             issues.append(ValidationIssue(path, "ERROR", f"Missing required field: {f}"))
-
 
 def validate_event_id_matches_filename(path: Path, d: Dict[str, Any], issues: List[ValidationIssue]) -> None:
     eid = d.get("event_id")
@@ -201,6 +240,40 @@ def validate_enums(path: Path, d: Dict[str, Any], issues: List[ValidationIssue])
     source = d.get("source")
     if source and source not in ALLOWED_SOURCES:
         issues.append(ValidationIssue(path, "ERROR", f"Invalid source='{source}'. Allowed: {sorted(ALLOWED_SOURCES)}"))
+
+        # ---- v1.3 event classification enforcement ----
+    event_type = d.get("event_type")
+    if event_type:
+        if event_type not in ALLOWED_EVENT_TYPE_V13:
+            issues.append(
+                ValidationIssue(
+                    path,
+                    "ERROR",
+                    f"Invalid event_type='{event_type}'. Allowed: {sorted(ALLOWED_EVENT_TYPE_V13)}",
+                )
+            )
+
+    event_subtype = d.get("event_subtype")
+    if event_subtype not in (None, ""):
+        if event_subtype not in ALLOWED_EVENT_SUBTYPE_V13:
+            issues.append(
+                ValidationIssue(
+                    path,
+                    "ERROR",
+                    f"Invalid event_subtype='{event_subtype}'. Allowed: {sorted(ALLOWED_EVENT_SUBTYPE_V13)}",
+                )
+            )
+
+    # Guardrail: subtype must not duplicate primary
+    if event_type and event_subtype and event_type == event_subtype:
+        issues.append(
+            ValidationIssue(
+                path,
+                "ERROR",
+                "event_subtype must not duplicate event_type.",
+            )
+        )
+
 
     check("phase_of_flight", ALLOWED_PHASE)
     check("mission_profile", ALLOWED_MISSION)
@@ -304,16 +377,6 @@ def validate_downloaded_date_format(path: Path, d: Dict[str, Any], issues: List[
         issues.append(ValidationIssue(path, "ERROR", f"downloaded must be YYYY-MM-DD. Got: {s!r}"))
 
 
-def validate_event_type_format(path: Path, d: Dict[str, Any], issues: List[ValidationIssue]) -> None:
-    # event_type should be machine-friendly (underscores). We warn only.
-    v = d.get("event_type")
-    if not v:
-        return
-    s = str(v).strip()
-    if " " in s:
-        issues.append(ValidationIssue(path, "WARN", "event_type contains spaces; prefer underscores (e.g., Loss_of_Control)."))
-
-
 def validate_record(path: Path) -> List[ValidationIssue]:
     issues: List[ValidationIssue] = []
     try:
@@ -329,7 +392,6 @@ def validate_record(path: Path) -> List[ValidationIssue]:
     validate_contributing_factors(path, d, issues)
     validate_drive_path(path, d, issues)
     validate_downloaded_date_format(path, d, issues)
-    validate_event_type_format(path, d, issues)
 
     return issues
 
