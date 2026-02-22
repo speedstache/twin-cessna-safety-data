@@ -226,3 +226,32 @@ Infrastructure is fully operational.
 First live dataset successfully acquired and summarized.
 
 Project has transitioned from system-building to evidence-driven analysis.
+
+# Week 2 – First MODEL gate reached
+Date: 2026-02-20
+
+### Status: Dataset Boundary Established (C310 Accidents)
+
+A controlled CAROL query was executed for each model in the fleet
+
+- Event Type: Accident
+- Date Range: 01/01/2006 – Present
+- Dataset: Aviation Accident & Incident Data
+
+The export was archived locally in: 06_Archived_Queries/CAROL_Exports
+
+## CAROL Export Summary
+
+- Event years observed: 2006–2025
+- Unparsed date count: 0
+- Out-of-scope model count: 0
+- Turbine contamination: None observed
+
+Model distribution so far in accident_master:
+
+- C310: 39
+- C320: 0
+- C340: 27
+- C402: 27
+- C414: 0
+- C421: 0
