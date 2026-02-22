@@ -103,7 +103,7 @@ BASE_COLUMNS = [
 CF_COLUMNS = [f"cf_{k}" for k in FACTOR_KEYS]
 
 # Keep the raw list for traceability
-TRACE_COLUMNS = ["contributing_factors_raw"]
+TRACE_COLUMNS = ["contributing_factors", "contributing_factors_raw"]
 
 ALL_COLUMNS = BASE_COLUMNS + CF_COLUMNS + TRACE_COLUMNS
 
@@ -177,7 +177,8 @@ def record_to_row(d: Dict[str, Any], dataset_type: str) -> Dict[str, Any]:
         row[f"cf_{k}"] = (k in cf_set)
 
     # Traceability
-    row["contributing_factors_raw"] = ",".join(cfs)
+    row["contributing_factors"] = "|".join(cfs)      # analysis-friendly
+    row["contributing_factors_raw"] = ",".join(cfs)  # keep as-is for legacy/trace
 
     # Ensure missing optional fields become blank rather than NaN at write time
     return row
