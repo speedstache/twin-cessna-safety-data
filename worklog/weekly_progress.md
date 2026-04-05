@@ -255,3 +255,23 @@ Model distribution so far in accident_master:
 - C402: 27
 - C414: 0
 - C421: 0
+
+# Week 3 – Cessna 310 dataset further along
+Date: 2026-04-04
+Took a break on progress during March due to work commitments
+
+### Status: Dataset Boundary Established (C310 Accidents)
+
+89 accident reports analyzed and entered into structured data for C310. Data through 2015 is complete. 
+Data from 2016-2026 represents 66 additional records
+
+Unknown rates within dataset remain in control based on taxonomy 1.3
+
+Model distribution so far in accident_master based on CAROL queries from 2006-2026:
+
+- C310: 89 (66 remaining)
+- C320: 0 (15 remaining)
+- C340: 27 (26 remaining)
+- C402: 27 (30 remaining)
+- C414: 0 (41 remaining)
+- C421: 0 (93 remaining)

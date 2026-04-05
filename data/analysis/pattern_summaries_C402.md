@@ -1,6 +1,6 @@
 # Ranked Pattern Summaries — Model C402
 
-_Generated: 2026-02-22 14:44:10_
+_Generated: 2026-04-05 00:15:29_
 
 ## Analysis Header (Required)
 
@@ -56,8 +56,8 @@ analysis_gate_status: Per-model gate scope for C402. Pattern summaries permitted
 
 |   operation_type |   count_events |   share_of_events |
 |-----------------:|---------------:|------------------:|
-|              135 |             17 |            0.6296 |
-|               91 |             10 |            0.3704 |
+|              135 |             18 |            0.6667 |
+|               91 |              9 |            0.3333 |
 
 ## Top 15 Phase × Event Type Patterns (ranked by count)
 
@@ -141,10 +141,9 @@ analysis_gate_status: Per-model gate scope for C402. Pattern summaries permitted
 
 |   operation_type | factor                             |   count_events |   share_of_events |
 |-----------------:|:-----------------------------------|---------------:|------------------:|
-|              135 | plan_continuation_bias             |              4 |            0.1481 |
+|              135 | plan_continuation_bias             |              5 |            0.1852 |
 |              135 | maintenance_induced_failure        |              3 |            0.1111 |
 |              135 | checklist_non_compliance           |              2 |            0.0741 |
-|               91 | plan_continuation_bias             |              2 |            0.0741 |
 |              135 | aging_aircraft_degradation         |              1 |            0.037  |
 |              135 | deferred_discrepancy_normalization |              1 |            0.037  |
 |              135 | icing_performance_degradation      |              1 |            0.037  |
@@ -152,6 +151,7 @@ analysis_gate_status: Per-model gate scope for C402. Pattern summaries permitted
 |              135 | low_time_in_type                   |              1 |            0.037  |
 |              135 | task_saturation                    |              1 |            0.037  |
 |               91 | aging_aircraft_degradation         |              1 |            0.037  |
+|               91 | plan_continuation_bias             |              1 |            0.037  |
 
 ## Unknown Factor Notes
 

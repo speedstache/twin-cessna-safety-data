@@ -52,5 +52,11 @@ python analysis/scripts/validate_records.py --path data/structured/accidents --w
 # run build_master.py
 python analysis/scripts/build_master.py
 
-# run demo_report.sh
+# activate the virtual environment for report generation
+source venv/bin/activate
+
+# run demo_report.sh (requires venv)
 bash analysis/scripts/demo_report.sh
+
+# generate pattern summaries
+python analysis/scripts/pattern_summaries.py 

@@ -114,7 +114,7 @@ run_step () {
   echo | tee -a "$logfile"
 }
 
-PYTHON_BIN="python"
+PYTHON_BIN="${PROJECT_ROOT}/venv/bin/python"
 
 # 1) Validate + rebuild (if present)
 if [[ -f "${PROJECT_ROOT}/analysis/scripts/validate_records.py" ]]; then
