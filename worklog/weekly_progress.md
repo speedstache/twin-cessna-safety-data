@@ -259,6 +259,7 @@ Model distribution so far in accident_master:
 # Week 3 – Cessna 310 dataset further along
 Date: 2026-04-04
 Took a break on progress during March due to work commitments
+Moved active development from Chromebook to Linux notebook
 
 ### Status: Dataset Boundary Established (C310 Accidents)
 

@@ -54,6 +54,7 @@ python analysis/scripts/build_master.py
 
 # activate the virtual environment for report generation
 source venv/bin/activate
+deactivate (to turn off)
 
 # run demo_report.sh (requires venv)
 bash analysis/scripts/demo_report.sh
