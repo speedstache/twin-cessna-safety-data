@@ -1,14 +1,14 @@
 # Ranked Pattern Summaries — Model C340
 
-_Generated: 2026-04-05 00:15:29_
+_Generated: 2026-04-25 16:12:54_
 
 ## Analysis Header (Required)
 
 ```
 taxonomy_version: 1.3
-dataset_size_total: 27
-dataset_size_per_model: {'C340': 27}
-unknown_factor_rate: 0.3125
+dataset_size_total: 48
+dataset_size_per_model: {'C340': 48}
+unknown_factor_rate: 0.2647
 analysis_gate_status: Per-model gate scope for C340. Pattern summaries permitted within this model. Counts-only; no exposure-based rates without exposure data.
 ```
 
@@ -20,135 +20,147 @@ analysis_gate_status: Per-model gate scope for C340. Pattern summaries permitted
 
 ## Baseline Severity Context (counts by model within this scope)
 
-- total_events: 27
-- fatal_events: 14
-- serious_injury_events: 1
-- destroyed_aircraft: 10
+- total_events: 48
+- fatal_events: 20
+- serious_injury_events: 2
+- destroyed_aircraft: 15
 
 ## Top 15 Event Types (ranked by count)
 
 | event_type               |   count_events |   share_of_events |
 |:-------------------------|---------------:|------------------:|
-| Loss_of_Control          |              9 |            0.3333 |
-| CFIT                     |              5 |            0.1852 |
-| Landing_Gear_Malfunction |              4 |            0.1481 |
-| Runway_Excursion         |              4 |            0.1481 |
-| Fuel_Starvation          |              2 |            0.0741 |
-| Ground_Collision         |              2 |            0.0741 |
-| Fire                     |              1 |            0.037  |
+| Loss_of_Control          |             15 |            0.3125 |
+| Landing_Gear_Malfunction |              7 |            0.1458 |
+| CFIT                     |              6 |            0.125  |
+| Runway_Excursion         |              6 |            0.125  |
+| Fuel_Starvation          |              4 |            0.0833 |
+| Ground_Collision         |              4 |            0.0833 |
+| Fire                     |              1 |            0.0208 |
+| System_Malfunction       |              1 |            0.0208 |
+| Hard_Landing             |              1 |            0.0208 |
+| Midair_Collision         |              1 |            0.0208 |
+| Other                    |              1 |            0.0208 |
+| Fuel_Exhaustion          |              1 |            0.0208 |
 
 ## Top 15 Phases of Flight (ranked by count)
 
 | phase_of_flight   |   count_events |   share_of_events |
 |:------------------|---------------:|------------------:|
-| Approach          |             11 |            0.4074 |
-| Landing           |              7 |            0.2593 |
-| Cruise            |              4 |            0.1481 |
-| Initial_Climb     |              3 |            0.1111 |
-| Go_Around         |              1 |            0.037  |
-| Takeoff           |              1 |            0.037  |
+| Approach          |             17 |            0.3542 |
+| Landing           |             11 |            0.2292 |
+| Cruise            |              5 |            0.1042 |
+| Initial_Climb     |              5 |            0.1042 |
+| Takeoff           |              4 |            0.0833 |
+| Taxi              |              3 |            0.0625 |
+| Go_Around         |              2 |            0.0417 |
+| Descent           |              1 |            0.0208 |
 
 ## Top 15 Operation Types (ranked by count)
 
 |   operation_type |   count_events |   share_of_events |
 |-----------------:|---------------:|------------------:|
-|               91 |             27 |                 1 |
+|               91 |             48 |                 1 |
 
 ## Top 15 Phase × Event Type Patterns (ranked by count)
 
 | phase_of_flight   | event_type               |   count_events |   share_of_events |
 |:------------------|:-------------------------|---------------:|------------------:|
-| Approach          | Loss_of_Control          |              5 |            0.1852 |
-| Approach          | CFIT                     |              3 |            0.1111 |
-| Initial_Climb     | Loss_of_Control          |              3 |            0.1111 |
-| Landing           | Landing_Gear_Malfunction |              3 |            0.1111 |
-| Landing           | Runway_Excursion         |              3 |            0.1111 |
-| Cruise            | CFIT                     |              2 |            0.0741 |
-| Approach          | Fire                     |              1 |            0.037  |
-| Approach          | Fuel_Starvation          |              1 |            0.037  |
-| Approach          | Landing_Gear_Malfunction |              1 |            0.037  |
-| Cruise            | Fuel_Starvation          |              1 |            0.037  |
-| Cruise            | Ground_Collision         |              1 |            0.037  |
-| Go_Around         | Loss_of_Control          |              1 |            0.037  |
-| Landing           | Ground_Collision         |              1 |            0.037  |
-| Takeoff           | Runway_Excursion         |              1 |            0.037  |
+| Approach          | Loss_of_Control          |              8 |            0.1667 |
+| Landing           | Landing_Gear_Malfunction |              6 |            0.125  |
+| Approach          | CFIT                     |              4 |            0.0833 |
+| Initial_Climb     | Loss_of_Control          |              4 |            0.0833 |
+| Landing           | Runway_Excursion         |              4 |            0.0833 |
+| Cruise            | CFIT                     |              2 |            0.0417 |
+| Takeoff           | Runway_Excursion         |              2 |            0.0417 |
+| Taxi              | Ground_Collision         |              2 |            0.0417 |
+| Approach          | Fire                     |              1 |            0.0208 |
+| Approach          | Fuel_Exhaustion          |              1 |            0.0208 |
+| Approach          | Fuel_Starvation          |              1 |            0.0208 |
+| Approach          | Landing_Gear_Malfunction |              1 |            0.0208 |
+| Approach          | Midair_Collision         |              1 |            0.0208 |
+| Cruise            | Fuel_Starvation          |              1 |            0.0208 |
+| Cruise            | Ground_Collision         |              1 |            0.0208 |
 
 ## Top 15 Contributing Factors (ranked by events_with_factor)
 
-| factor                             |   events_with_factor |   share_of_events |   share_of_factor_assignments |
-|:-----------------------------------|---------------------:|------------------:|------------------------------:|
-| plan_continuation_bias             |                    5 |            0.1852 |                        0.2273 |
-| assumption_of_performance          |                    4 |            0.1481 |                        0.1818 |
-| checklist_non_compliance           |                    2 |            0.0741 |                        0.0909 |
-| icing_performance_degradation      |                    2 |            0.0741 |                        0.0909 |
-| low_time_in_type                   |                    2 |            0.0741 |                        0.0909 |
-| maintenance_induced_failure        |                    2 |            0.0741 |                        0.0909 |
-| normalization_of_deviance          |                    2 |            0.0741 |                        0.0909 |
-| informal_or_incomplete_training    |                    1 |            0.037  |                        0.0455 |
-| lapsed_recency                     |                    1 |            0.037  |                        0.0455 |
-| task_saturation                    |                    1 |            0.037  |                        0.0455 |
-| aging_aircraft_degradation         |                    0 |            0      |                        0      |
-| deferred_discrepancy_normalization |                    0 |            0      |                        0      |
-| density_altitude_underestimation   |                    0 |            0      |                        0      |
-| high_time_complacency              |                    0 |            0      |                        0      |
-| incomplete_troubleshooting         |                    0 |            0      |                        0      |
+| factor                               |   events_with_factor |   share_of_events |   share_of_factor_assignments |
+|:-------------------------------------|---------------------:|------------------:|------------------------------:|
+| plan_continuation_bias               |                   12 |            0.25   |                          0.24 |
+| checklist_non_compliance             |                    7 |            0.1458 |                          0.14 |
+| assumption_of_performance            |                    5 |            0.1042 |                          0.1  |
+| low_time_in_type                     |                    4 |            0.0833 |                          0.08 |
+| normalization_of_deviance            |                    4 |            0.0833 |                          0.08 |
+| icing_performance_degradation        |                    3 |            0.0625 |                          0.06 |
+| informal_or_incomplete_training      |                    3 |            0.0625 |                          0.06 |
+| maintenance_induced_failure          |                    3 |            0.0625 |                          0.06 |
+| task_saturation                      |                    3 |            0.0625 |                          0.06 |
+| density_altitude_underestimation     |                    2 |            0.0417 |                          0.04 |
+| aging_aircraft_degradation           |                    1 |            0.0208 |                          0.02 |
+| lapsed_recency                       |                    1 |            0.0208 |                          0.02 |
+| single_engine_performance_assumption |                    1 |            0.0208 |                          0.02 |
+| weight_balance_misjudgment           |                    1 |            0.0208 |                          0.02 |
+| deferred_discrepancy_normalization   |                    0 |            0      |                          0    |
 
 ## Top 15 Phase × Factor Patterns (ranked by count)
 
-| phase_of_flight   | factor                          |   count_events |   share_of_events |
-|:------------------|:--------------------------------|---------------:|------------------:|
-| Approach          | icing_performance_degradation   |              2 |            0.0741 |
-| Approach          | low_time_in_type                |              2 |            0.0741 |
-| Approach          | plan_continuation_bias          |              2 |            0.0741 |
-| Cruise            | plan_continuation_bias          |              2 |            0.0741 |
-| Initial_Climb     | assumption_of_performance       |              2 |            0.0741 |
-| Landing           | assumption_of_performance       |              2 |            0.0741 |
-| Landing           | maintenance_induced_failure     |              2 |            0.0741 |
-| Approach          | checklist_non_compliance        |              1 |            0.037  |
-| Approach          | lapsed_recency                  |              1 |            0.037  |
-| Approach          | normalization_of_deviance       |              1 |            0.037  |
-| Cruise            | checklist_non_compliance        |              1 |            0.037  |
-| Cruise            | normalization_of_deviance       |              1 |            0.037  |
-| Go_Around         | informal_or_incomplete_training |              1 |            0.037  |
-| Initial_Climb     | plan_continuation_bias          |              1 |            0.037  |
-| Initial_Climb     | task_saturation                 |              1 |            0.037  |
+| phase_of_flight   | factor                           |   count_events |   share_of_events |
+|:------------------|:---------------------------------|---------------:|------------------:|
+| Approach          | plan_continuation_bias           |              7 |            0.1458 |
+| Approach          | checklist_non_compliance         |              4 |            0.0833 |
+| Approach          | icing_performance_degradation    |              3 |            0.0625 |
+| Approach          | low_time_in_type                 |              3 |            0.0625 |
+| Landing           | maintenance_induced_failure      |              3 |            0.0625 |
+| Approach          | informal_or_incomplete_training  |              2 |            0.0417 |
+| Approach          | normalization_of_deviance        |              2 |            0.0417 |
+| Cruise            | plan_continuation_bias           |              2 |            0.0417 |
+| Initial_Climb     | assumption_of_performance        |              2 |            0.0417 |
+| Initial_Climb     | plan_continuation_bias           |              2 |            0.0417 |
+| Landing           | assumption_of_performance        |              2 |            0.0417 |
+| Takeoff           | density_altitude_underestimation |              2 |            0.0417 |
+| Approach          | lapsed_recency                   |              1 |            0.0208 |
+| Approach          | task_saturation                  |              1 |            0.0208 |
+| Cruise            | checklist_non_compliance         |              1 |            0.0208 |
 
 ## Top 15 Event Type × Factor Patterns (ranked by count)
 
 | event_type               | factor                          |   count_events |   share_of_events |
 |:-------------------------|:--------------------------------|---------------:|------------------:|
-| CFIT                     | plan_continuation_bias          |              4 |            0.1481 |
-| Landing_Gear_Malfunction | maintenance_induced_failure     |              2 |            0.0741 |
-| Loss_of_Control          | assumption_of_performance       |              2 |            0.0741 |
-| Loss_of_Control          | low_time_in_type                |              2 |            0.0741 |
-| Runway_Excursion         | assumption_of_performance       |              2 |            0.0741 |
-| CFIT                     | icing_performance_degradation   |              1 |            0.037  |
-| Fuel_Starvation          | checklist_non_compliance        |              1 |            0.037  |
-| Ground_Collision         | normalization_of_deviance       |              1 |            0.037  |
-| Loss_of_Control          | checklist_non_compliance        |              1 |            0.037  |
-| Loss_of_Control          | icing_performance_degradation   |              1 |            0.037  |
-| Loss_of_Control          | informal_or_incomplete_training |              1 |            0.037  |
-| Loss_of_Control          | lapsed_recency                  |              1 |            0.037  |
-| Loss_of_Control          | normalization_of_deviance       |              1 |            0.037  |
-| Loss_of_Control          | plan_continuation_bias          |              1 |            0.037  |
-| Loss_of_Control          | task_saturation                 |              1 |            0.037  |
+| CFIT                     | plan_continuation_bias          |              5 |            0.1042 |
+| Loss_of_Control          | plan_continuation_bias          |              4 |            0.0833 |
+| Landing_Gear_Malfunction | maintenance_induced_failure     |              3 |            0.0625 |
+| Loss_of_Control          | assumption_of_performance       |              3 |            0.0625 |
+| Loss_of_Control          | informal_or_incomplete_training |              3 |            0.0625 |
+| Loss_of_Control          | low_time_in_type                |              3 |            0.0625 |
+| Loss_of_Control          | normalization_of_deviance       |              3 |            0.0625 |
+| Fuel_Starvation          | checklist_non_compliance        |              2 |            0.0417 |
+| Loss_of_Control          | checklist_non_compliance        |              2 |            0.0417 |
+| Loss_of_Control          | icing_performance_degradation   |              2 |            0.0417 |
+| Runway_Excursion         | assumption_of_performance       |              2 |            0.0417 |
+| CFIT                     | icing_performance_degradation   |              1 |            0.0208 |
+| CFIT                     | task_saturation                 |              1 |            0.0208 |
+| Fuel_Exhaustion          | checklist_non_compliance        |              1 |            0.0208 |
+| Fuel_Exhaustion          | plan_continuation_bias          |              1 |            0.0208 |
 
 ## Top 15 Operation Type × Factor Patterns (ranked by count)
 
-|   operation_type | factor                          |   count_events |   share_of_events |
-|-----------------:|:--------------------------------|---------------:|------------------:|
-|               91 | plan_continuation_bias          |              5 |            0.1852 |
-|               91 | assumption_of_performance       |              4 |            0.1481 |
-|               91 | checklist_non_compliance        |              2 |            0.0741 |
-|               91 | icing_performance_degradation   |              2 |            0.0741 |
-|               91 | low_time_in_type                |              2 |            0.0741 |
-|               91 | maintenance_induced_failure     |              2 |            0.0741 |
-|               91 | normalization_of_deviance       |              2 |            0.0741 |
-|               91 | informal_or_incomplete_training |              1 |            0.037  |
-|               91 | lapsed_recency                  |              1 |            0.037  |
-|               91 | task_saturation                 |              1 |            0.037  |
+|   operation_type | factor                               |   count_events |   share_of_events |
+|-----------------:|:-------------------------------------|---------------:|------------------:|
+|               91 | plan_continuation_bias               |             12 |            0.25   |
+|               91 | checklist_non_compliance             |              7 |            0.1458 |
+|               91 | assumption_of_performance            |              5 |            0.1042 |
+|               91 | low_time_in_type                     |              4 |            0.0833 |
+|               91 | normalization_of_deviance            |              4 |            0.0833 |
+|               91 | icing_performance_degradation        |              3 |            0.0625 |
+|               91 | informal_or_incomplete_training      |              3 |            0.0625 |
+|               91 | maintenance_induced_failure          |              3 |            0.0625 |
+|               91 | task_saturation                      |              3 |            0.0625 |
+|               91 | density_altitude_underestimation     |              2 |            0.0417 |
+|               91 | aging_aircraft_degradation           |              1 |            0.0208 |
+|               91 | lapsed_recency                       |              1 |            0.0208 |
+|               91 | single_engine_performance_assumption |              1 |            0.0208 |
+|               91 | weight_balance_misjudgment           |              1 |            0.0208 |
 
 ## Unknown Factor Notes
 
-- events_with_unknown_factor: 10
-- unknown_factor_rate (assignment-based): 0.3125
+- events_with_unknown_factor: 18
+- unknown_factor_rate (assignment-based): 0.2647

@@ -276,3 +276,26 @@ Model distribution so far in accident_master based on CAROL queries from 2006-20
 - C402: 27 (30 remaining)
 - C414: 0 (41 remaining)
 - C421: 0 (93 remaining)
+
+# Week 4 – 300 series datasets complete
+Date: 2026-04-25
+Datasets completed for Cessna 310, 320, 340. Remaining work on 400 series should be completed this week
+
+### Status: Dataset Boundary Established (C310 Accidents)
+
+Unknown rates within dataset remain in control based on taxonomy 1.3
+
+Model distribution so far in accident_master based on CAROL queries from 2006-2026:
+
+- C310: 137 (0 remaining)
+- C320: 15 (0 remaining)
+- C340: 48 (0 remaining)
+- C402: 27 (30 remaining)
+- C414: 0 (41 remaining)
+- C421: 0 (93 remaining)
+
+### wrote first output white paper 
+
+- /home/nathan-taylor/twin-cessna-safety-data/docs/twin_cessna_accident_database_white_paper_2026-04-25.docx
+- sent draft to Twin Cessna Safety Committee for review
+- TTCF conference is this upcoming week through May 1st. 
