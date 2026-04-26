@@ -2,4 +2,5 @@ model,total_events,fatal_events,serious_injury_events,destroyed_aircraft
 C310,137,50,10,31
 C320,15,9,1,5
 C340,48,20,2,15
-C402,27,2,2,1
+C402,49,2,4,1
+C414,37,14,5,12
